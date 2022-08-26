@@ -73,7 +73,7 @@ p {
 /* Header start */
 
 .header {
-    border-bottom: var(--header-border-cl);
+    border-bottom: 1px solid var(--header-border-cl);
 }
 
 .header-container {
