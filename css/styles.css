@@ -12,12 +12,13 @@
     --accent-color: #2196F3;
     --hero-button-hover-color: #188CE8;
     --portfolio-button-bg-color: #F5F4FA;
+
+    --header-border-cl: #ECECEC;
+    --portfolio-border-cl: #EEEEEE;
 }
 
-/* 
-font-family: 'Raleway',
-sans-serif;
- */
+/* Global styles start */
+
 
 .page {
     font-family: 'Roboto';
@@ -25,14 +26,32 @@ sans-serif;
     color: var(--text-color-black);
 }
 
-/* Header start */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-.header {}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
 
-.nav {}
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 
-.nav-logo {
-    color: var(--text-color-full-black);
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .logo {
@@ -43,19 +62,55 @@ sans-serif;
     letter-spacing: 0.03em;
 }
 
+.link {
+    text-decoration: none;
+}
+
+
+
+/* Global styles end */
+
+/* Header start */
+
+.header {
+    border-bottom: var(--header-border-cl);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-logo {
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+    color: var(--text-color-full-black);
+}
+
 .logo>span {
     color: var(--accent-color);
 }
 
-.nav-list {}
-
-.list {
-    list-style-type: none;
+.nav-list {
+    display: flex;
+    align-items: center;
 }
 
-.nav-list-item {}
+.nav-list-item:not(:last-child) {
+    margin-right: 50px;
+
+}
 
 .nav-list-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -72,19 +127,23 @@ sans-serif;
     color: var(--accent-color);
 }
 
-.link {
-    text-decoration: none;
-}
-
 .nav-list .active {
     color: var(--accent-color);
 }
 
-.contacts-list {}
+.contacts-list {
+    display: flex;
+    margin-left: auto;
+}
 
-.contacts-list-item {}
+.contacts-list-item:not(:last-child) {
+    margin-right: 50px;
+}
 
 .contacts-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -104,28 +163,46 @@ sans-serif;
 
 /* Hero section start */
 .hero-section {
+    padding-top: 200px;
+    padding-bottom: 200px;
     text-align: center;
+
     background-color: var(--bg-color-black);
 }
 
 .hero-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 696px;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
+
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-color-white);
 }
 
 .hero-btn {
+    min-width: 216px;
+    padding-top: 10px;
+    padding-right: 26px;
+    padding-bottom: 10px;
+    padding-left: 26px;
+
     font-weight: 700;
     font-size: inherit;
     line-height: 1.86;
-    text-align: center;
     letter-spacing: 0.06em;
+    text-align: center;
+
     color: var(--text-color-white);
     background-color: var(--accent-color);
+
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -141,16 +218,27 @@ sans-serif;
 
 .benefits-title {}
 
-.benefits-list {}
+.benefits-list {
+    display: flex;
+}
 
-.benefits-card {}
+.benefits-card {
+    width: calc((100%-3*30px)/4);
+}
 
 .benefits-card-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+}
+
+.benefits-card:not(:last-child) {
+    margin-right: 30px;
 }
 
 .benefits-card-descr {
@@ -163,29 +251,52 @@ sans-serif;
 /* Benefits section end */
 
 /* Jobs section start */
-.jobs-section {}
+.jobs-section.section {
+    padding-top: 0;
+}
 
-.jobs-section-title {}
 
-.jobs-list {}
+.jobs-section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.jobs-list {
+    display: flex;
+    margin-left: -15px;
+    /* gap: 30px; */
+}
 
 .jobs-card-link {}
 
-.jobs-card {}
+.jobs-card {
+    width: calc((100%-2*15px)/3);
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
-.jobs-image {}
+.jobs-image {
+    display: block;
+}
 
 /* Jobs section end */
 
 
 /* Our team section start */
 .our-team-section {
-    /* text-align: center; */
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-color: var(--bg-color-gray);
 }
 
-.our-team-title {}
+.our-team-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
 
-.team-list {}
+.team-list {
+    display: flex;
+}
 
 .team-card-link {}
 
@@ -193,19 +304,38 @@ sans-serif;
     color: inherit;
 }
 
-.team-card {}
+.team-card {
+    width: calc((100%-3*30px)/4);
+    padding-bottom: 30px;
 
-.team-card-image {}
+    border-radius: 0px 0px 4px 4px;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-card:not(:last-child) {
+    margin-right: 30px;
+}
+
+.team-card-image {
+    margin-bottom: 30px;
+
+}
 
 .team-card-title {
+    margin-bottom: 10px;
     font-weight: 500;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-align: center;
 }
 
 .team-card-descr {
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-align: center;
     color: var(--text-color-gray);
 }
 
@@ -213,10 +343,15 @@ sans-serif;
 
 /* Footer start */
 .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
     background-color: var(--bg-color-black);
 }
 
 .footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+
     color: var(--text-color-white);
 }
 
@@ -227,6 +362,11 @@ sans-serif;
 .footer-list {}
 
 .footer-list-item {}
+
+
+.footer-list-item:not(:last-child) {
+    margin-bottom: 9px;
+}
 
 .footer-address-link,
 .footer-address-link:visited {
@@ -261,17 +401,29 @@ sans-serif;
 /* Portfolio start */
 .page {}
 
-.portfolio-section {}
+.portfolio-section {
+    /* background-color: coral; */
+}
 
 .portfolio-section-title {}
 
 .filters-list {
-    list-style-type: none;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
 
-.filters-item {}
+.filters-item:not(:last-child) {
+    margin-right: 8px;
+}
 
 .filters-btn {
+    min-height: 38px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 22px;
+    padding-left: 22px;
+
     font-family: inherit;
     font-weight: 500;
     font-size: inherit;
@@ -281,7 +433,10 @@ sans-serif;
 
     color: inherit;
     background-color: var(--bg-color-gray);
+
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
 }
 
 .filters-btn:hover {
@@ -290,7 +445,30 @@ sans-serif;
 }
 
 .portfolio-list {
-    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio-card {
+    width: ((100%-2*30px)/3);
+}
+
+.portfolio-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    border: 1px solid var(--portfolio-border-cl);
+    border-top: none;
+}
+
+.portfolio-card:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.portfolio-card:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
 }
 
 .portfolio-card-link {}
@@ -299,9 +477,9 @@ sans-serif;
     color: inherit;
 }
 
-.portfolio-card {}
-
-.portfolio-card-image {}
+.portfolio-card-image {
+    display: block;
+}
 
 .portfolio-card-title {
     font-weight: 700;
